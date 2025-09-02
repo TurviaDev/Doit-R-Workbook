@@ -1,4 +1,4 @@
-### 데이터를 입력해 데이터 프레임 만들기
+### 데이터를 입력해 데이터 프레임 만들기 ----------
 # 영어 점수
 english <- c(90, 80, 60, 70)
 english
@@ -52,7 +52,7 @@ df_midterm
 ## 3      60  100     2
 ## 4      70   20     2
 
-### 엑셀 파일 불러오기
+### 엑셀 파일 불러오기 ----------
 # readxl 패키지 설치하고 로드하기
 install.packages("readxl")
 library(readxl)
@@ -79,8 +79,8 @@ mean(df_exam$english)
 mean(df_exam$science)
 ## [1] 59.45
 
-# 첫 번째 행이 변수명이 아닐 경우 - 첫 번째 행의 데이터가 변수명으로 지정되면서 유실되는 문제가 발생.
-df_exam_nover <- read_excel("excel_exam_novar.xlsx", col_names = F) # F는 거짓(FALSE)
+# 첫 번째 행이 변수명이 아닐 경우
+df_exam_nover <- read_excel("excel_exam_novar.xlsx", col_names = F)
 df_exam_nover
 ##    ...1  ...2  ...3  ...4  ...5
 ## 1     1     1    50    98    50
@@ -92,12 +92,11 @@ df_exam_nover
 ## 7     7     4    46    98    65
 ## 8     8     4    48    87    12
 
-# 엑셀 파일에 시트가 여러 개일 때
-# 엑셀 파일의 세 번째 시트에 있는 데이터 불러오기
+# 엑셀 파일에 시트가 여러 개일 때 원하는 시트 불러오기
 df_exam_sheet <- read_excel("excel_exam_sheet.xlsx", sheet = 3)
 df_exam_sheet
 
-### CSV 파일 불러오기
+### CSV 파일 불러오기 ----------
 df_csv_exam <- read.csv("csv_exam.csv")
 df_csv_exam
 ##      id class  math english science
@@ -109,7 +108,7 @@ df_csv_exam
 ## 6     6     2    50      89      98
 ## ...
 
-### 데이터 프레임 CSV 파일로 저장하기
+### 데이터 프레임 CSV 파일로 저장하기 ----------
 # 데이터 프레임 만들기
 df_midterm <- data.frame(english = c(90, 80, 60, 70),
                          math = c(50, 60, 100, 20),
@@ -123,8 +122,8 @@ df_midterm <- data.frame(english = c(90, 80, 60, 70),
 # CSV 파일로 저장하기
 write.csv(df_midterm, file = "df_midterm.csv")
 
-### RDS 파일 활용하기
-#데이터 프레임을 RDS 파일로 저장하기
+### RDS 파일 활용하기 ----------
+# 데이터 프레임을 RDS 파일로 저장하기
 saveRDS(df_midterm, file = "df_midterm.rds")
 
 # df_midterm 데이터 삭제
