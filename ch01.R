@@ -1,4 +1,4 @@
-### 변수 만들기기
+### 변수 만들기 ----------
 a <- 1
 a
 ## [1] 1
@@ -14,7 +14,7 @@ d <- 3.5
 d
 ## [1] 3.5
 
-### 여러 값으로 구성된 변수 만들기
+### 여러 값으로 구성된 변수 만들기 ----------
 var1 <- c(1, 2, 3, 4, 5)
 var1
 ## [1] 1 2 3 4 5
@@ -31,7 +31,7 @@ var4 <- seq(1, 10, by = 2)
 var4
 ## [1] 1 3 5 7 9
 
-### 문자로 된 변수 만들기
+### 문자로 된 변수 만들기 ---------
 str1 <- "a"
 str1
 ## [1] "a"
@@ -48,7 +48,7 @@ str5 <- c("Hello!", "World", "is", "good")
 str5
 ## [1] "Hello!" "World"  "is"     "good"  
 
-### 숫자를 다루는 함수 이용하기
+### 숫자를 다루는 함수 이용하기 ----------
 # 변수 만들기
 x <- c(1, 2, 3)
 x
@@ -66,7 +66,7 @@ max(x)
 min(x)
 ## [1] 1
 
-### 문자를 다루는 함수 이용하기
+### 문자를 다루는 함수 이용하기 ----------
 str5
 ## [1] "Hello!" "World"  "is"     "good"  
 
@@ -85,7 +85,7 @@ str5_paste <- paste(str5, collapse = " ")
 str5_paste
 ## [1] "Hello! World is good"
 
-### ggplot2 패키지 설치하기
+### ggplot2 패키지 설치하기 ----------
 # 설치
 install.packages("ggplot2", dependencies = T)
 
@@ -99,7 +99,7 @@ x
 # 빈도 막대 그래프 출력
 qplot(x)
 
-### ggplot2의 mpg 데이터로 그래프 만들기 - 고속도로 연비별 빈도 막대 그래프프
+### ggplot2의 mpg 데이터로 그래프 만들기 - 고속도로 연비별 빈도 막대 그래프 ----------
 # data에 mpg, x축에 hwy 변수 지정해 그래프 생성
 qplot(data = mpg, x = hwy)
 
@@ -116,4 +116,5 @@ qplot(data = mpg, x = drv, y = hwy, geom = "line")
 qplot(data = mpg, x = drv, y = hwy, geom = "boxplot")
 
 # x축 drv, y축 hwy, 상자 그림 형태, drv별 색 표현
+
 qplot(data = mpg, x = drv, y = hwy, geom = "boxplot", colour = drv)
